@@ -1,0 +1,13 @@
+Recursive Koch Snowflake Algorithm:
+function generate(pt1, pt2, levels){
+    if(level==0){
+        drawline(pt1,pt2);
+    }
+    else{
+        pta,ptb,ptc = generatepoints(pt1,pt2) //such that pt1-pta,pta-ptb,ptb-ptc,ptc-pt2 are equal in length
+        generate(pt1,pta,level-1)
+        generate(pta,ptb,level-1)
+        generate(ptb,ptc,level-1)
+        generate(ptc,pt2,level-1)
+    }
+}
